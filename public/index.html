@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ghosts</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://kit.fontawesome.com/4bbfdc5edb.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+	<main class="intro">
+		<h1>GHOSTS</h1>
+		<article class="htp">
+			<div>
+				<h2>How to play</h2>
+				<p>Two players are required to start the game.</p>
+				<p>When two clients are connected, click the ready button to prompt the game to start.</p>
+				<p>Move around with the arrow keys and use the space bar to attack.</p>
+				<i class="fas fa-chevron-circle-down"></i>
+			</div>
+			<div>
+				<h2>Enemies</h2>
+				<p>Ghosts will spawn frequently, so be sure to move around!</p>
+				<p>When a ghost spawns, they will randomly choose one of the players to follow.</p>
+				<i class="fas fa-chevron-circle-down"></i>
+			</div>
+			<div>
+				<h2>Attacks</h2>
+				<p>A ghost needs to be hit three times in order to be killed. The range of your attack covers every square around you.</p>
+				<p>Whenever a ghost does a counter attack, a coloured circle will be seen around the ghost. Grey indicates a miss hit and orange indicates a hit, which will make the player take damage.</p>
+				<i class="fas fa-chevron-circle-down"></i>
+			</div>
+			<div>
+				<h2>Health</h2>
+				<p>If both players' health reaches zero the game is over.</p>
+				<p>Medicine packs will spawn randomly across the map which can be picked up simply by walking over them. They will regenerate some of the player's health.</p>
+				<p>Enjoy your game!</p>
+				<i class="fas fa-chevron-circle-up"></i>
+			</div>
+		</article>
+		<span class="intro-text">(1/2 connected)</span>
+		<span class="intro-text">Waiting for another player...</span>
+		
+		<div class="loading-wrapper"><div class="loading"></div></div>
+		<button class="hide" id="ready"><i class="fas fa-check-circle"></i>I'm ready</button>
+
+		<p class="intro-text hide">Game starting in 3...</p>
+	</main>
+
+	<section class="info hide">
+		<article>
+			<article>
+				<span class="info-title">PLAYER 1</span><i class="fas fa-ghost"></i><span class="count"
+					id="player-one-count">0</span>
+			</article>
+			<div class="health-background">
+				<div class="health-shine"></div>
+				<div class="health" id="player-one-health"></div>
+			</div>
+		</article>
+		<article>
+			<article>
+				<span class="count" id="player-two-count">0</span><i class="fas fa-ghost"></i><span
+					class="info-title">PLAYER 2</span>
+			</article>
+			<div class="health-background">
+				<div class="health-shine"></div>
+				<div class="health" id="player-two-health"></div>
+			</div>
+		</article>
+	</section>
+	<main class="board hide">
+		<div class="player-one"></div>
+		<div class="player-one-dove"><i class="fas fa-dove"></i></div>
+		<div class="player-attack" id="player-one-attack"></div>
+		<div class="player-two"></div>
+		<div class="player-two-dove"><i class="fas fa-dove"></i></div>
+		<div class="player-attack" id="player-two-attack"></div>
+	</main>
+	<section class="overlay hide">
+		<h1>GAME OVER</h1>
+		<i class="fas fa-skull-crossbones"></i>
+		<p id="total">Total score: 0</p>
+	</section>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="js/client.js"></script>
+</body>
+
+</html>
